@@ -593,17 +593,27 @@
 
         // Load all available companies
         async function loadCompanyList() {
+            const fallbackCompanies = ['Apple', 'Microsoft', 'Google', 'Amazon', 'Tesla', 'Meta', 'NVIDIA', 'JPMorgan', 'Berkshire Hathaway', 'Johnson & Johnson', 'Coca-Cola', 'Walmart', 'Visa', 'Mastercard', 'Adobe', 'Intel', 'AMD', 'Netflix', 'IBM', 'Oracle', 'Reliance Industries', 'TCS', 'HDFC Bank', 'Infosys', 'State Bank of India', 'Hindustan Unilever', 'ITC Limite', 'Axis Bank', 'Bajaj Auto', 'Larsen & Toubro'];
+
             try {
                 const response = await fetch(`${API_URL}/companies`);
                 const data = await response.json();
-                
-                if (data.status === 'success') {
+
+                if (data && data.status === 'success' && Array.isArray(data.companies) && data.companies.length > 0) {
                     allCompanies = data.companies;
-                    populateSelectDropdown();
+                } else {
+                    // Use fallback if API returns unexpected data
+                    console.warn('API returned no companies, using fallback list');
+                    allCompanies = fallbackCompanies;
                 }
+                populateSelectDropdown();
             } catch (error) {
                 console.error('Error loading companies:', error);
-                showError('Failed to load company list');
+                // Populate dropdown with fallback companies so UI remains usable
+                allCompanies = fallbackCompanies;
+                populateSelectDropdown();
+                // Show a non-blocking error message
+                showError('Failed to load company list from server — using fallback list');
             }
         }
 
