@@ -1,53 +1,121 @@
-# Risk & Return Analysis - Stock Investment Advisor
+# 📊 DTDI Project - Stock Investment Advisor
 
-A full-stack web application for analyzing stock risk and return profiles with AI-powered investment recommendations.
+A full-stack web application for analyzing and comparing stock investments with professional financial metrics and AI-powered recommendations.
 
-## Features
+**Live Demo**: https://dtdi-stock-advisor.herokuapp.com (Deploy here)
 
-✅ **Company Analysis** - Enter any company name to get instant financial analysis
-✅ **Risk & Return Metrics** - View annual returns, volatility, Sharpe ratio, P/E ratio, Beta, and more
-✅ **Smart Recommendations** - Get BUY/SELL/HOLD recommendations based on risk-return analysis
+## ✨ Features
+
+✅ **Company Analysis** - Analyze 30 stocks with comprehensive financial metrics
+✅ **30 Companies** - Mix of global leaders (US) & Indian market stocks
+✅ **Smart Recommendations** - STRONG BUY/BUY/HOLD/WEAK HOLD/SELL/AVOID based on Sharpe ratio & fundamentals
+✅ **Risk & Return Metrics** - Annual return, volatility, Sharpe ratio, P/E ratio, Beta, dividend yield
 ✅ **Company Comparison** - Compare up to 5 companies side-by-side
-✅ **Pre-loaded Data** - 20 major companies with real financial metrics
 ✅ **Beautiful UI** - Modern, responsive interface with smooth animations
 ✅ **Real-time Analysis** - Instant calculations using professional financial formulas
 
-## Project Structure
+## 📋 Companies Included
 
-```
-DTDI Project/
-├── backend/
-│   └── app.py              # Flask API server
-├── frontend/
-│   └── index.html          # Web interface
-├── data/
-│   └── companies_data.csv  # Pre-loaded company financial data
-├── requirements.txt        # Python dependencies
-└── README.md              # This file
-```
+**US Companies (20):** Apple, Microsoft, Google, Amazon, Tesla, Meta, NVIDIA, JPMorgan, Berkshire Hathaway, Johnson & Johnson, Coca-Cola, Walmart, Visa, Mastercard, Adobe, Intel, AMD, Netflix, IBM, Oracle
 
-## Technologies Used
+**Indian Companies (10):** Reliance Industries, TCS, HDFC Bank, Infosys, State Bank of India, Hindustan Unilever, ITC Limited, Axis Bank, Bajaj Auto, Larsen & Toubro
 
-- **Backend**: Python Flask, Pandas, NumPy
-- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+## 🏗️ Tech Stack
+
+- **Backend**: Python Flask 3.0.0, Pandas, NumPy
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **Data**: CSV-based financial metrics
-- **API**: RESTful Flask API with CORS support
+- **API**: RESTful with CORS support
 
-## Quick Start
+## 🚀 Quick Start (Local)
 
-### 1. Install Python Dependencies
+### 1. Clone Repository
+```bash
+git clone https://github.com/YOUR_USERNAME/DTDI-Project.git
+cd DTDI-Project
+```
 
+### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Start the Backend Server
-
+### 3. Start Backend (Terminal 1)
 ```bash
 python backend/app.py
 ```
+Runs on `http://localhost:5000`
 
-The server will run on `http://localhost:5000`
+### 4. Start Frontend (Terminal 2)
+```bash
+cd frontend
+python -m http.server 8000
+```
+Open `http://localhost:8000` in browser
+
+## 🌐 Deploy Online
+
+### Option 1: Railway.app (Easiest - Free Tier Available)
+
+1. **Push to GitHub** (see below)
+2. Go to https://railway.app
+3. Login with GitHub
+4. Click "New Project" → "Deploy from GitHub repo"
+5. Select DTDI-Project repository
+6. Add `FLASK_ENV=production` as environment variable
+7. Deploy! Railway will auto-detect your Python app
+
+### Option 2: Render.com (Free Tier)
+
+1. **Push to GitHub**
+2. Go to https://render.com
+3. Click "New+" → Web Service
+4. Connect GitHub repo
+5. Set Build command: `pip install -r requirements.txt`
+6. Set Start command: `python backend/app.py`
+7. Create `Procfile` in root:
+```
+web: gunicorn backend.app:app
+```
+8. Add to requirements.txt: `gunicorn==21.2.0`
+9. Deploy!
+
+### Option 3: Heroku (Paid - but works well)
+
+1. **Push to GitHub**
+2. Create `Procfile`:
+```
+web: gunicorn backend.app:app
+```
+3. Add to requirements.txt: `gunicorn==21.2.0`
+4. Git push and Heroku auto-deploys
+
+## 📤 Push to GitHub
+
+```bash
+cd "c:\Users\giris\OneDrive\Desktop\DTDI Project"
+git remote add origin https://github.com/YOUR_USERNAME/DTDI-Project.git
+git branch -M main
+git push -u origin main
+```
+
+Replace `YOUR_USERNAME` with your GitHub username.
+
+## 📁 Project Structure
+
+```
+DTDI-Project/
+├── backend/
+│   └── app.py              # Flask API
+├── frontend/
+│   └── index.html          # Web UI
+├── data/
+│   └── companies_data.csv  # 30 Companies
+├── requirements.txt        # Dependencies
+├── Procfile                # Deployment config
+├── .gitignore              # Git ignore
+└── README.md               # This file
+```
 
 You should see:
 ```
