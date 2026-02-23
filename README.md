@@ -2,7 +2,15 @@
 
 A full-stack web application for analyzing and comparing stock investments with professional financial metrics and AI-powered recommendations.
 
-**Live Demo**: https://dtdi-stock-advisor.herokuapp.com (Deploy here)
+## 🌐 Live Deployment
+
+### **Backend** ✅ LIVE
+API Server: https://investment-intelligence.onrender.com
+
+### **Frontend** - Deploy with One Click
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/girishrawal1311/DTDI-Project&project-name=dtdi-stock-advisor&repository-name=dtdi-stock-advisor)
+
+Or deploy to Netlify: [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/girishrawal1311/DTDI-Project)
 
 ## ✨ Features
 
@@ -28,6 +36,7 @@ A full-stack web application for analyzing and comparing stock investments with 
 - **API**: RESTful with CORS support
 
 ## 🚀 Quick Start (Local)
+
 
 ### 1. Clone Repository
 ```bash
