@@ -1,0 +1,11 @@
+# Deploy frontend separately  
+services:
+  - type: web
+    name: DTDI-Frontend
+    env: node
+    plan: free
+    buildCommand: npm install --production
+    startCommand: node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18

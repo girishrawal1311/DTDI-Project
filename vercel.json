@@ -1,0 +1,8 @@
+{
+  "buildCommand": "echo 'Frontend build complete'",
+  "outputDirectory": "frontend",
+  "framework": "other",
+  "env": {
+    "API_URL": "@api_url"
+  }
+}
